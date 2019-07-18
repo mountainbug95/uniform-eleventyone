@@ -1,17 +1,16 @@
 stackbitVersion: ~0.2.34
 ssgName: eleventy
+version: 0.8.2
 uploadDir: images
-metadata:
-  title: EleventyOne
-  description: "Phil's first port of call when starting another project using Eleventy."
-  author: Phil Hawksworth
-  authorURL: https://github.com/philhawksworth/eleventyone
+publishDir: _site
+buildCommand: "npm install && npm run build"
+pageTemplateKey: layout
 models:
   base:
     type: page
     label: Base
-    template: base
-    exclude: posts/**
+    folder: pages
+    template: layouts/base.njk
     fields:
       - type: string
         name: title
@@ -22,3 +21,19 @@ models:
         name: subtitle
         label: Page Subtitle
         description: The text displayed below the page title.
+  post:
+    type: page
+    label: Post
+    folder: posts
+    template: layouts/post.njk
+    fields:
+      - type: string
+        name: title
+        label: Page Title
+        required: true
+        description: The title displayed at the top of the page.
+      - type: date
+        name: date
+        label: Post Date
+        required: true
+        description: The date the post was created
