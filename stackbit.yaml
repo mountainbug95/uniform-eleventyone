@@ -22,19 +22,3 @@ models:
         name: subtitle
         label: Page Subtitle
         description: The text displayed below the page title.
-  post:
-    type: page
-    label: Post
-    folder: posts
-    template: post
-    fields:
-      - type: string
-        name: title
-        label: Page Title
-        required: true
-        description: The title displayed at the top of the page.
-      - type: date
-        name: date
-        label: Post Date
-        required: true
-        description: The date the post was created
