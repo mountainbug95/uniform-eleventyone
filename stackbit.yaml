@@ -1,4 +1,5 @@
 stackbitVersion: ~0.2.34
+ssgName: eleventy
 uploadDir: images
 metadata:
   title: EleventyOne
