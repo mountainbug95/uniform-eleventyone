@@ -2,15 +2,31 @@ stackbitVersion: ~0.2.34
 ssgName: eleventy
 version: 0.8.2
 uploadDir: images
-publishDir: _site
 buildCommand: "npm install && npm run build"
+publishDir: _site
+dataDir: _sitedata
+pagesDir: ""
+staticDir: "static"
 pageTemplateKey: layout
 models:
-  base:
+  metadata:
+    type: data
+    label: Site Metadata
+    description: Global Site Metadata
+    file: metadata.yaml
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: url
+        label: Repo URL
+  page:
     type: page
     label: Base
+    description: Generic  page  layout
     folder: pages
-    template: layouts/base.njk
+    template: layouts/page.njk
     fields:
       - type: string
         name: title
@@ -24,6 +40,7 @@ models:
   post:
     type: page
     label: Post
+    description: Post Layout
     folder: posts
     template: layouts/post.njk
     fields:
